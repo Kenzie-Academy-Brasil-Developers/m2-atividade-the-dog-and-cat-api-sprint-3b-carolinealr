@@ -1,0 +1,41 @@
+body {
+	background: #d39a9b;
+}
+
+.container-geral {
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.div-dog,
+.div-cat {
+	width: 350px;
+	height: 500px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-content: center;
+	align-items: center;
+}
+
+.div-img-dog,
+.div-img-cat {
+	width: 300px;
+	height: 400px;
+	background-color: #ffffff;
+	border: 1px solid #d39a9b;
+}
+
+.button-dog,
+.button-cat {
+	width: 300px;
+	border: none;
+	text-align: center;
+	padding: 5px 0 5px 0;
+	background-color: #f28789;
+	color: #ffffff;
+	font-size: 12px;
+	cursor: pointer;
+}
