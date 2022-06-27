@@ -16,8 +16,6 @@ divImgCat.classList.add("div-img-cat");
 buttonDog.classList.add("button-dog");
 buttonCat.classList.add("button-cat");
 
-divImgDog.innerText = "Foto aleatória de cachorro";
-divImgCat.innerText = "Foto aleatória de gato";
 buttonDog.innerText = "Escolher Cachorro";
 buttonCat.innerText = "Escolher Gato";
 
@@ -29,18 +27,29 @@ body.append(divGeral);
 // Fetch acessa URL
 // .then((resposta) => resposta.json()) transforma a resposta em um Objeto JavaScript
 
-buttonDog.addEventListener("click", () => {
+function chamarFetchDog() {
 	fetch("https://api.thedogapi.com/v1/images/search")
 		.then((resposta) => resposta.json())
 		.then((cachorro) => {
 			document.querySelector(".div-img-dog").src = cachorro[0].url;
 		});
-});
+}
 
-buttonCat.addEventListener("click", () => {
+function chamarFetchCat() {
 	fetch("https://api.thecatapi.com/v1/images/search")
 		.then((resposta) => resposta.json())
 		.then((gato) => {
 			document.querySelector(".div-img-cat").src = gato[0].url;
 		});
+}
+
+chamarFetchDog();
+chamarFetchCat();
+
+buttonDog.addEventListener("click", () => {
+	chamarFetchDog();
+});
+
+buttonCat.addEventListener("click", () => {
+	chamarFetchCat();
 });
